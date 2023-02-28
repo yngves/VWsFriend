@@ -117,22 +117,26 @@ This is an example of a config that will provide ample performance and reasonabl
 * Download the Raspberry Pi Imager app from https://www.raspberrypi.com/software/
 * On the main Imager screen, under Operating System, choose Raspberry Pi OS (other) > Raspberry Pi OS Lite (64 bit). Alternatively, if you have a Pi 3, go for the 32 bit variant.
 * On the main Imager screen, click Storage and select your SD card
-* On the main Imager screen, click the Gear button (lower right) and enter your desired hostname and login username/password, wifi setup etc., then save.
+* On the main Imager screen, click the settings/"gear" button (lower right) and enter your desired hostname and login username/password, wifi setup etc., then save.
 * On the main Imager screen, click Write, then confirm.
 
 When writing is done, eject the SD card, insert it into you Raspberry Pi and boot the system.
 
-### Update and Configure
+### Log in
 
-You should now be able to ssh into the Raspberry Pi using the username and hostname you entered in the Imager application, e.g.:
+If you are logging in from a device that is on the same network as the Raspberry Pi, you will most likely be able to use the following command to ssh into the Pi:
 
 ```ssh username@hostname.local```
+
+... where username and hostname are the settings you entered in the Raspberry Pi Imager application. If ´hostname.local´ doesn't work, you will need to use some other technique to find the IP address assigned to the Raspberry Pi.
+
+### Update and Configure
 
 First, make sure that you have a completely up to date OS installation:
 
 ```sudo apt-get update && sudo apt-get upgrade```
 
-Note that the apt-get commands above may output error messages like `perl: warning: Setting locale failed`. These errors are not fatal, but they are annoying. Do as follows to get rid of them:
+Note that the apt-get commands above may output error messages like `perl: warning: Setting locale failed`. These errors are not fatal, but they are annoying. Here is a simple way to get rid of them, but do be aware that if you will be using this machine for other purposes than running VWsFriend, you may want to investigate less intrusive solutions. Google is your friend.
 
 ```sudo nano /etc/ssh/sshd_config```
 
