@@ -108,8 +108,8 @@ sudo apt install -t buster-backports libseccomp2
 
 ### Example hardware config:
 
-Raspberry Pi 4 B, 8Gb
-32 Gb SDHC card (get a reasonably fast one for decent boot times overall performance)
+* Raspberry Pi 4 Model B 8Gb
+* 32 Gb SDHC card (get a reasonably fast one for decent boot times overall performance)
 
 ### Basic Raspberry Pi System Setup
 
