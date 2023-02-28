@@ -128,7 +128,7 @@ If you are logging in from a device that is on the same network as the Raspberry
 
 ```ssh username@hostname.local```
 
-... where username and hostname are the settings you entered in the Raspberry Pi Imager application. If ´hostname.local´ doesn't work, you will need to use some other technique to find the IP address assigned to the Raspberry Pi.
+... where `username` and `hostname` are the settings you entered in the Raspberry Pi Imager application. If `hostname.local` doesn't work in your environment, you will need to use some other technique to find the IP address assigned to the Raspberry Pi.
 
 ### Update and Configure
 
