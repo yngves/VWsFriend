@@ -104,6 +104,65 @@ sudo apt install -t buster-backports libseccomp2
 ```
 * Ironically you cannot host VWsFriend with Homekit support on a macOS machine. The reason is that there is no way to get the advertisements via multicast out of the container into the network. If you want to use the Homekit feature you have to host VWsFriend on a Linux machine. If someone is able to make a setup work on macOS, please let me know to allow me to update the documentation!
 
+## Simple Raspberry Pi Setup for VWsFriend
+
+### Example hardware config:
+
+Raspberry Pi 4 B, 8Gb
+32 Gb SDHC card (get a reasonably fast one for decent boot times overall performance)
+
+### Basic Raspberry Pi System Setup
+
+* Download the Raspberry Pi Imager app from https://www.raspberrypi.com/software/
+* On the main Imager screen, under Operating System, choose Raspberry Pi OS (other) > Raspberry Pi OS Lite (64 bit). Alternatively, if you have a Pi 3, go for the 32 bit variant.
+* On the main Imager screen, click Storage and select your SD card
+* On the main Imager screen, click the Gear button (lower right) and enter your desired hostname and login username/password, wifi setup etc., then save.
+* On the main Imager screen, click Write, then confirm.
+
+When writing is done, eject the SD card and insert it into you Raspberry Pi and boot it.
+
+You should now be able to ssh into the Raspberry Pi using the username and hostname you entered in the Imager application, e.g.:
+
+```ssh username@hostname.local```
+
+First, make sure that you have a completely up to date OS installation:
+
+```sudo apt-get update && sudo apt-get upgrade```
+
+Note that the apt-get commands above may output error messages like `perl: warning: Setting locale failed`. These errors are not fatal, but they are annoying. Do as follows to get rid of them:
+
+```sudo nano /etc/ssh/sshd_config```
+
+Find the line that reads `AcceptEnv LANG LC_*` and change it to `AcceptEnv no`
+
+Save and close the file. Then restart the ssh system as follows:
+
+```sudo systemctl restart sshd```
+
+### Install Docker and Docker-compose
+
+Next, install Docker. The VWsFriend project tends to require very recent Docker tooling, so we will get the latest versions directly from docker.com:
+
+Get and run the install scripts from docker.com:
+
+```curl -fsSL test.docker.com -o get-docker.sh && sh get-docker.sh```
+
+Add docker permissions to your user:
+
+```sudo usermod -aG docker ${USER}```
+
+```
+Install docker-compose with dependencies:
+sudo apt-get install libffi-dev libssl-dev
+sudo apt install python3-dev
+sudo apt-get install -y python3 python3-pip
+sudo pip3 install docker-compose
+```
+
+### Go on to Install VWsFriend
+
+Your system should now be ready for installation of VWsFriend. Please head over to the [How to start](https://github.com/tillsteinbach/VWsFriend#readme) section for instructions.
+
 ## Open improvements
 * Deploy datasource and dashboard as grafana app (allows better control)
 * Change update frequency based on the cars state (more often when car is online)
