@@ -106,12 +106,13 @@ sudo apt install -t buster-backports libseccomp2
 
 ## Simple Raspberry Pi Setup for VWsFriend
 
-### Example hardware config:
+### Example Hardware Config
 
+This is an example of a config that will provide ample performance and reasonable storage volume for long term statistics:
 * Raspberry Pi 4 Model B 8Gb
-* 32 Gb SDHC card (get a reasonably fast one for decent boot times overall performance)
+* 32 Gb SDHC card (get a fairly fast one for decent boot times and overall performance)
 
-### Basic Raspberry Pi System Setup
+### Install the Operating System
 
 * Download the Raspberry Pi Imager app from https://www.raspberrypi.com/software/
 * On the main Imager screen, under Operating System, choose Raspberry Pi OS (other) > Raspberry Pi OS Lite (64 bit). Alternatively, if you have a Pi 3, go for the 32 bit variant.
@@ -119,7 +120,9 @@ sudo apt install -t buster-backports libseccomp2
 * On the main Imager screen, click the Gear button (lower right) and enter your desired hostname and login username/password, wifi setup etc., then save.
 * On the main Imager screen, click Write, then confirm.
 
-When writing is done, eject the SD card and insert it into you Raspberry Pi and boot it.
+When writing is done, eject the SD card, insert it into you Raspberry Pi and boot the system.
+
+### Update and Configure
 
 You should now be able to ssh into the Raspberry Pi using the username and hostname you entered in the Imager application, e.g.:
 
@@ -151,8 +154,9 @@ Add docker permissions to your user:
 
 ```sudo usermod -aG docker ${USER}```
 
-```
 Install docker-compose with dependencies:
+
+
 sudo apt-get install libffi-dev libssl-dev
 sudo apt install python3-dev
 sudo apt-get install -y python3 python3-pip
