@@ -146,6 +146,8 @@ Save and close the file. Then restart the ssh system as follows:
 
 ```sudo systemctl restart sshd```
 
+Finally, log out and then in again.
+
 ### Install Docker and Docker-compose
 
 Next, install Docker. The VWsFriend project tends to require very recent Docker tooling, so we will get the latest versions directly from docker.com:
