@@ -110,7 +110,7 @@ sudo apt install -t buster-backports libseccomp2
 
 This is an example of a config that will provide ample performance and reasonable storage volume for long term statistics:
 * Raspberry Pi 4 Model B 8Gb
-* 32 Gb SDHC card (get a fairly fast one for decent boot times and overall performance)
+* 32 Gb SDHC or SDXC card (Go SDXC for decent boot times and overall performance)
 
 ### Install the Operating System
 
