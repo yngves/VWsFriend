@@ -160,6 +160,8 @@ Add docker permissions to your user:
 
 ```sudo usermod -aG docker ${USER}```
 
+Log out and then in again for the group membership to take effect.
+
 Install docker-compose with dependencies:
 
 ```
