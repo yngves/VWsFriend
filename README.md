@@ -120,7 +120,7 @@ This is an example of a config that will provide ample performance and reasonabl
 * On the main Imager screen, click the settings/"gear" button (lower right) and enter your desired hostname and login username/password, wifi setup etc., then save.
 * On the main Imager screen, click Write, then confirm.
 
-When writing is done, eject the SD card, insert it into you Raspberry Pi and boot the system.
+When writing is done, eject the SD card, insert it into your Raspberry Pi and boot the system.
 
 ### Log in
 
