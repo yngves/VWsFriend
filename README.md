@@ -173,7 +173,7 @@ sudo pip3 install docker-compose
 
 ### Go on to Install VWsFriend
 
-Your system should now be ready for installation of VWsFriend. Please head over to the [How to start](#how-to-start) section for instructions.
+Your system should now be ready for installation of VWsFriend. Please head over to the [How to start](https://github.com/tillsteinbach/VWsFriend#how-to-start) section for instructions.
 
 ## Open improvements
 * Deploy datasource and dashboard as grafana app (allows better control)
